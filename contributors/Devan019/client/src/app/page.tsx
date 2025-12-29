@@ -1,32 +1,32 @@
 "use client"
-import { SignInButton, SignOutButton, SignUpButton, UserAvatar, UserProfile } from '@clerk/nextjs'
-import { useUser } from '@clerk/nextjs'
-import Link from 'next/link';
 
-const page = () => {
+import {
+  SignInButton,
+  SignOutButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserAvatar,
+} from '@clerk/nextjs'
+import Link from 'next/link'
 
-  const { isSignedIn,isLoaded } = useUser();
-
-  if(!isLoaded){
-    return (
-      <div>Loading</div>
-    )
-  }
-
+export default function Page() {
   return (
     <div>
-      {isSignedIn ? 
-        <div className='flex justify-center gap-4'>
+      <SignedIn>
+        <div className="flex justify-center gap-4">
           <UserAvatar />
           <SignOutButton />
-          <Link href={"/dashboard"}>Dashboard</Link>
+          <Link href="/dashboard">Dashboard</Link>
         </div>
-      : <div className='flex justify-center gap-4'>
-        <SignUpButton />
-        <SignInButton />
-      </div>}
+      </SignedIn>
+
+      <SignedOut>
+        <div className="flex justify-center gap-4">
+          <SignUpButton />
+          <SignInButton />
+        </div>
+      </SignedOut>
     </div>
   )
 }
-
-export default page

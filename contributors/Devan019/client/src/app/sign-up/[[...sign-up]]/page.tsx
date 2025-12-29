@@ -1,13 +1,7 @@
 'use client'
 
-import { SignUp, useUser } from '@clerk/nextjs'
+import { SignUp } from '@clerk/nextjs'
 
 export default function Page() {
-  const { isSignedIn } = useUser()
-
-  if (!isSignedIn) {
-    return <SignUp />
-  }
-
-  return <div>Welcome!</div>
+  return <SignUp />
 }
