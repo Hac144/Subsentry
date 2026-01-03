@@ -190,3 +190,7 @@ This project exists because of your time, effort, and curiosity.
 - **Name:** Himansh Arora
 - **GitHub:** https://github.com/Humanshere 
 - **About:** IT-BI Second year at IIITA
+
+- **Name:** Utkarsh Pandey  
+  **GitHub:** https://github.com/utkarshp579  
+  **About:** Full-Stack Developer , AI-ML Enthusiast
